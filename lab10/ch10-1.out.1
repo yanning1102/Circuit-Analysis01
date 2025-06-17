@@ -1,0 +1,163 @@
+
+**** 06/03/21 21:45:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ *circuit description
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vdd vdd 0 dc 1.5
+*vi vi 0 sin(0V 10V 60HZ)
+vi vi 0 dc 0.7348529
+*diode model descriotion
+
+M1 1 vi vdd vdd d_mos L=1.8u W=8.1u
+M2 1 vi 0 0 e_mos L=1.8u W=2.7u
+
+.model e_mos nmos (KP=300u Vto=0.5 lambda=0.002 gamma=0.5)
+.model d_mos pmos (KP=75u Vto=-0.5 lambda=0.002 gamma=0.5)
+
+*analysis requests
+*.TRAN 0.01ms 40ms 0ms 0.01ms
+.dc vi 0 2 0.01
+.op
+.probe
+.end
+
+**** 06/03/21 21:45:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ *circuit description
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               e_mos           d_mos           
+               NMOS            PMOS            
+       LEVEL    1               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO     .5             -.5          
+          KP  300.000000E-06   75.000000E-06 
+       GAMMA     .5              .5          
+         PHI     .6              .6          
+      LAMBDA    2.000000E-03    2.000000E-03 
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX    0               0            
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 06/03/21 21:45:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ *circuit description
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)     .1868  (   vi)     .7349  (  vdd)    1.5000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vdd         -1.189E-05
+    vi           0.000E+00
+
+    TOTAL POWER DISSIPATION   1.78E-05  WATTS
+
+
+**** 06/03/21 21:45:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ *circuit description
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M1          M2        
+MODEL        d_mos       e_mos     
+ID          -1.19E-05    1.19E-05 
+VGS         -7.65E-01    7.35E-01 
+VDS         -1.31E+00    1.87E-01 
+VBS          0.00E+00    0.00E+00 
+VTH         -5.00E-01    5.00E-01 
+VDSAT       -2.65E-01    2.35E-01 
+Lin0/Sat1   -1.00E+00   -1.00E+00 
+if          -1.00E+00   -1.00E+00 
+ir          -1.00E+00   -1.00E+00 
+TAU         -1.00E+00   -1.00E+00 
+GM           8.97E-05    8.41E-05 
+GDS          2.37E-08    2.17E-05 
+GMB          2.90E-05    2.71E-05 
+CBD          0.00E+00    0.00E+00 
+CBS          0.00E+00    0.00E+00 
+CGSOV        0.00E+00    0.00E+00 
+CGDOV        0.00E+00    0.00E+00 
+CGBOV        0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00 
+CGB          0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+**** 06/03/21 21:45:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ *circuit description
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

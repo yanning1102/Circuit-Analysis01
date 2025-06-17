@@ -1,0 +1,13 @@
+
+vi 1 0 dc 15v
+r1 1 2 42k
+vcc 5 0 dc 15v
+vee 4 0 dc -15v
+r2 3 0 1k
+q1 5 2 3 aaa
+.model aaa npn(level=1 bf=100 is=1.8104e-15a )
+q2 4 2 3 bbb
+.model bbb pnp(level=1 bf=100 is=1.8104e-15a )
+.op
+.probe
+.end

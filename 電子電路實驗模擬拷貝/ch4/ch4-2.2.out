@@ -1,0 +1,162 @@
+
+**** 04/08/21 15:01:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+*r1 1 2 11.81272234k
+i1 1 2 dc 1m
+vdd 1 0 dc 15
+vo 4 0 dc 5
+M1 3 3 0 0 e_mos L=10u W=100u
+M2 5 3 0 0 e_mos L=10u W=100u
+M3 2 2 3 0 e_mos L=10u W=100u
+M4 4 2 5 0 e_mos L=10u W=100u
+.model e_mos nmos (KP=20u Vto=1V lambda=0.02)
+
+.dc vo 0 15 0.01
+.op
+.probe
+.end
+
+**** 04/08/21 15:01:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               e_mos           
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    1            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA     .02         
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 04/08/21 15:01:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   15.0000  (    2)    8.0835  (    3)    4.0417  (    4)    5.0000      
+
+(    5)    3.3553  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vdd         -1.000E-03
+    vo          -9.873E-04
+
+    TOTAL POWER DISSIPATION   1.99E-02  WATTS
+
+
+**** 04/08/21 15:01:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M1          M2          M3          M4        
+MODEL        e_mos       e_mos       e_mos       e_mos     
+ID           1.00E-03    9.87E-04    1.00E-03    9.87E-04 
+VGS          4.04E+00    4.04E+00    4.04E+00    4.73E+00 
+VDS          4.04E+00    3.36E+00    4.04E+00    1.64E+00 
+VBS          0.00E+00    0.00E+00   -4.04E+00   -3.36E+00 
+VTH          1.00E+00    1.00E+00    1.00E+00    1.00E+00 
+VDSAT        3.04E+00    3.04E+00    3.04E+00    3.73E+00 
+Lin0/Sat1   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+if          -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+ir          -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+TAU         -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+GM           6.58E-04    6.49E-04    6.58E-04    3.40E-04 
+GDS          1.85E-05    1.85E-05    1.85E-05    4.50E-04 
+GMB          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGSOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGDOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGBOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGB          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+**** 04/08/21 15:01:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .13
+

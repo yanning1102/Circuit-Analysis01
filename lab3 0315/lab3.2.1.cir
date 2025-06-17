@@ -1,0 +1,12 @@
+
+vcc 1 0 dc 10v
+vbb 5 0 dc 3v
+vi 4 5 dc 1mv 
+rc 1 2 2k
+rbb 4 3 100k
+
+q1 2 3 0 npntra
+.model npntra npn(is=1.8e-15 bf=100)
+.tf v(2) vi
+.op
+.end

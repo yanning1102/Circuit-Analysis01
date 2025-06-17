@@ -1,0 +1,120 @@
+
+**** 03/25/21 13:41:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+rd 3 4 4k
+*rd 3 4 6k
+vdd 3 0 dc 15
+
+vi 2 1 PWL(0, 0V 0.5mS, 0.8V 1.5mS, -0.8V 2.5mS, 0.8V 3.5mS,
++ -0.8V 4.5mS, 0.8V 5.5mS, -0.8V 6mS, 0V) 
+vgs 1 0 dc 6
+M1 4 2 0 0 e_mos L=5u W=50u
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.dc vdd 0 15 0.01 vgs 1 6 1
+.probe
+.end
+
+**** 03/25/21 13:41:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               e_mos           
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA     .02         
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+
+          JOB CONCLUDED
+
+**** 03/25/21 13:41:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .53
+
+**** 03/25/21 13:41:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+rd 3 4 4k
+rd 3 4 6k
+
+ERROR(ORPSIM-15089): Can not re-define rd. rd is either a system defined variable or has already been defined
+---$
+ERROR(ORPSIM-16371): Extra text on line
+vdd 3 0 dc 15
+
+vi 2 1 PWL(0, 0V 0.5mS, 0.8V 1.5mS, -0.8V 2.5mS, 0.8V 3.5mS,
++ -0.8V 4.5mS, 0.8V 5.5mS, -0.8V 6mS, 0V) 
+vgs 1 0 dc 6
+M1 4 2 0 0 e_mos L=5u W=50u
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.dc vdd 0 15 0.01 vgs 1 6 1
+.probe
+.end
+

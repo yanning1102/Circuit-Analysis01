@@ -1,0 +1,25 @@
+
+**** 03/15/22 15:43:43 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 1 0 dc 2.4v
+vb 3 0 dc -5v
+m1 0 2 1 3 aaa l=10u w=50u
+.model aaa nmos(kp=20u vto=1v lambda=0)
+.dc vi -5 5 0.01
+.probe
+.end
+
+ERROR(ORPSIM-15141): Less than 2 connections at node 2.
+
+ERROR(ORPSIM-15142): Node 2 is floating
+

@@ -1,0 +1,14 @@
+A Single-Stage Amplifier Circuit
+*circuit description
+Vcc 1 0 dc 10V
+Vbb 5 0 dc 3V
+vi 4 5 dc 1mV
+Rc 1 2 2k
+Rbb 4 3 100k
+*model description
+Q1 2 3 0 npn_transistor
+.model npn_transistor npn (Is=1.8e-15 Bf=100)
+*analysis requests
+.tf V(2) vi
+.op
+.end

@@ -1,0 +1,113 @@
+lab5.1.1
+
+vdd 1 0 dc 8v
+r1 1 2 7293
+m1 2 2 0 0 aaa 
+m2 4 2 0 0 aaa 
+.model aaa nmos(kp=4m vto=2v l=1u w=1u lambda=0.02)
+vo 4 0 dc 3v
+.op
+.probe
+.end
+
+
+lab5.1.2
+
+vdd 1 0 dc 8v
+vo 4 0 dc 3v
+r1 1 2 4586
+m3 2 2 3 3 aaa l=1u w=1u
+m4 4 2 5 5 aaa l=1u w=1u
+m1 3 3 0 0 aaa l=1u w=1u
+m2 5 3 0 0 aaa l=1u w=1u
+.model aaa nmos(kp=4ma vto=2 lambda=0.02)
+.op
+.probe
+.end
+
+
+lab5.1.3
+
+vdd 1 0 dc 4v
+vss 10 0 dc -4v
+m9 4 2 1 1 bbb l=1u w=1u
+m8 2 2 1 1 bbb l=1u w=1u
+m11 4 4 7 7 aaa l=1u w=1u
+m10 2 4 6 6 aaa l=1u w=1u
+m13 7 7 10 10 aaa l=1u w=1u
+m12 6 7 9 9 aaa l=1u w=2u
+.model aaa nmos(kp=4m vto=2 lambda=0.02)
+.model bbb pmos(kp=4m vto=-2 lambda=0.02)
+rb 9 10 207
+.op
+.probe
+.end
+
+
+lab5.2.1
+
+vdd 1 0 dc 4v
+r1 1 2 7293
+vo 3 0 dc 0v
+vo2 7 0 dc 0v
+vss 5 0 dc -4v
+m1 2 2 5 5 aaa l=1u w=1u
+m2 3 2 5 5 aaa l=1u w=1u
+m3 6 2 5 5 aaa l=1u w=1u
+m4 6 6 1 1 bbb l=1u w=1u
+m5 7 6 1 1 bbb l=1u w=1u
+.model aaa nmos(kp=4m vto=2v lambda=0.02)
+.model bbb pmos(kp=4m vto=-2v lambda=0.02)
+.op
+.probe 
+.end
+
+
+lab5.2.2
+
+vdd 1 0 dc 4v
+vss 5 0 dc -4v
+vo 99 0 dc 0v
+vo2 77 0 dc 0v
+rb 7 5 207
+m9 3 2 1 1 bbb l=1u w=1u
+m8 2 2 1 1 bbb l=1u w=1u
+m11 3 3 4 4 aaa l=1u w=1u
+m10 2 3 6 6 aaa l=1u w=1u
+m13 4 4 5 5 aaa l=1u w=1u
+m12 6 4 7 7 aaa l=1u w=2u
+m2 99 2 1 1 bbb l=1u w=1u
+m3 8 2 1 1 bbb l=1u w=1u
+m4 8 8 5 5 aaa l=1u w=1u
+m5 77 8 5 5 aaa l=1u w=1u
+.model aaa nmos(kp=4m vto=2v lambda=0.02)
+.model bbb pmos(kp=4m vto=-2v lambda=0.02)
+.op
+.probe
+.end
+
+
+lab5.2.3
+
+vdd 1 0 dc 4v
+vss 5 0 dc -4v
+vi6 70 0 dc -1.33v
+vi7 80 0 dc 2.7v
+rb 7 5 207
+m9 3 2 1 1 bbb l=1u w=1u
+m8 2 2 1 1 bbb l=1u w=1u
+m11 3 3 4 4 aaa l=1u w=1u
+m10 2 3 6 6 aaa l=1u w=1u
+m13 4 4 5 5 aaa l=1u w=1u
+m12 6 4 7 7 aaa l=1u w=2u
+m2 8 2 1 1 bbb l=1u w=1u
+m6 8 70 5 5  aaa l=1u w=1u
+m3 12 2 1 1 bbb l=1u w=1u
+m4 12 12 5 5 aaa l=1u w=1u
+m5 11 12 5 5 aaa l=1u w=1u
+m7 1 80 11 11 aaa l=1u w=1u
+.model aaa nmos(kp=4m vto=2v lambda=0.02)
+.model bbb pmos(kp=4m vto=-2v lambda=0.02)
+.op
+.probe
+.end

@@ -1,0 +1,17 @@
+
+vdd 4 0 dc 20v
+vs 1 0 ac 100mv
+rsig 1 2 50
+c1 2 3 200u
+r1 3 4 560k
+r2 3 0 82k
+m1 5 3 0 0 aaa1
+.model aaa1 nmos(kp=1.073u W=0.12 L=2u Vto=1.73 Lambda=0.002 Tox=2u Cgso=73.61p Cgdo=6.487p Cbd=74.46p)
+c2 5 7 200u
+rL 7 0 390
+rd 4 5 390
+.op
+.ac dec 500 0.001 1000meg
+.plot ac vdb(7)
+.probe
+.end

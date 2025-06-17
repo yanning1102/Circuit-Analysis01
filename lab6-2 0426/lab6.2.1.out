@@ -1,0 +1,233 @@
+
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vdd 1 0 dc 12v
+m1 3 3 0 0 aaa1
+m2 2 2 3 0 aaa2
+m3 2 2 1 1 bbb3
+m4 4 2 1 1 bbb4
+m5 4 3 5 0 aaa5
+*vg 7 0 dc 3v
+*vo 4 0 dc 6v
+.model aaa1 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0  w=11.487 l=1)
+.model aaa2 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0.5 phi=0.6 w=36.75 l=1)
+.model aaa5 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0  w=11.5 l=1)
+.model bbb3 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0  w=0.311 l=1)
+.model bbb4 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0  w=0.3132 l=1)
+vs 6 0 sin(0 0.0026 1k 0 0 0)
+vi 5 6 dc 0v
+*vo 4 0 dc 6v
+.op
+.tran 0.01m 20m 0m 0.01m
+.probe
+.end
+
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               aaa1            aaa2            aaa5            bbb3            
+               NMOS            NMOS            NMOS            PMOS            
+       LEVEL    1               1               1               1            
+           L    1               1               1               1            
+           W   11.487          36.75           11.5              .311        
+         VTO    1.73            1.73            1.73           -3.533        
+          KP    1.073000E-06    1.073000E-06    1.073000E-06   10.430000E-06 
+       GAMMA    0                .5             0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    2.000000E-03    2.000000E-03    2.000000E-03    2.000000E-03 
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX    0               0               0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               bbb4            
+               PMOS            
+       LEVEL    1            
+           L    1            
+           W     .3132       
+         VTO   -3.533        
+          KP   10.430000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    2.000000E-03 
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   12.0000  (    2)    6.0002  (    3)    2.9993  (    4)    5.9926      
+
+(    5)    0.0000  (    6)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vdd         -2.005E-05
+    vs           1.006E-05
+    vi           1.006E-05
+
+    TOTAL POWER DISSIPATION   2.41E-04  WATTS
+
+
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         m1          m2          m3          m4          m5        
+MODEL        aaa1        aaa2        bbb3        bbb4        aaa5      
+ID           9.99E-06    9.99E-06   -9.99E-06   -1.01E-05    1.01E-05 
+VGS          3.00E+00    3.00E+00   -6.00E+00   -6.00E+00    3.00E+00 
+VDS          3.00E+00    3.00E+00   -6.00E+00   -6.01E+00    5.99E+00 
+VBS          0.00E+00   -3.00E+00    0.00E+00    0.00E+00    0.00E+00 
+VTH          1.73E+00    2.29E+00   -3.53E+00   -3.53E+00    1.73E+00 
+VDSAT        1.27E+00    7.10E-01   -2.47E+00   -2.47E+00    1.27E+00 
+Lin0/Sat1   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+if          -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+ir          -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+TAU         -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00   -1.00E+00 
+GM           1.57E-05    2.82E-05    8.10E-06    8.16E-06    1.59E-05 
+GDS          1.99E-08    1.99E-08    1.97E-08    1.99E-08    1.99E-08 
+GMB          0.00E+00    3.71E-06    0.00E+00    0.00E+00    0.00E+00 
+CBD          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBS          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGSOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGDOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGBOV        0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGB          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   12.0000  (    2)    6.0002  (    3)    2.9993  (    4)    5.9926      
+
+(    5)    0.0000  (    6)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vdd         -2.005E-05
+    vs           1.006E-05
+    vi           1.006E-05
+
+    TOTAL POWER DISSIPATION   2.41E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 05/31/22 14:50:04 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .11
+

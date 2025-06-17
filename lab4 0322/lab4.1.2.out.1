@@ -1,0 +1,28 @@
+
+**** 03/22/22 14:13:14 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vcc 1 0 dc 15v
+q1 2 3 0 aaa
+.model aaa npn(is=1.8e-15 vaf=100 bf=100)
+vo 4 0 dc 5v
+q3 4 2 3 bbb
+.model bbb npn(is=1.8e-15 vaf=100 bf=100)
+q2 3 3 0 ccc
+.mpdel ccc npn(is=1.8e-15 vaf=100 bf=100)
+$
+ERROR(ORPSIM-16056): Unrecognizable command
+.op
+.dc vo 0 15 0.01
+.probe
+.end
+

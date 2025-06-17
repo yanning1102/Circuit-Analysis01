@@ -1,0 +1,31 @@
+
+**** 03/15/22 16:01:31 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 1 0 dc 2.4v
+vbn 3 0 dc -5v
+vgn 2 0 dc 5v
+m1 1 2 0 3 aaa (l=10u w=50u)
+.model aaa nmos(kp=20u vto=1v lambd=0)
+------------------------------$
+ERROR -- 'lambd' is not a model parameter name
+
+vbp 4 0 dc 5v
+vgp 5 0 dc -5v
+m2 1 5 0 4 ccc(l=10u w=50u)
+.model ccc pmos(kp=20u vto=1v lambd=0)
+------------------------------$
+ERROR -- 'lambd' is not a model parameter name
+.dc vi -5 5 0.01
+.probe
+.end
+

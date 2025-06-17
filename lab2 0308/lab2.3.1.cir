@@ -1,0 +1,10 @@
+
+vdd 1 0 dc 10v
+rd 1 2 50k
+r1 2 3 20meg
+r2 3 0 20meg
+m1 2 3 0 0 aaa l=10u w=50u 
+.model aaa nmos(kp=20u vto=1v lambda=0)
+.op
+.probe
+.end

@@ -1,0 +1,13 @@
+
+vdd 1 0 dc 12v
+m3 1 1 2 0 aaa3
+m2 2 2 3 0 aaa2
+m1 3 3 0 0 aaa1
+.model aaa1 nmos(kp=1.073u vto=1.73 phi=0.6 gamma=0.5 lambda=0 l=100 w=58)
+.model aaa2 nmos(kp=1.073u vto=1.73 phi=0.6 gamma=0.5 lambda=0 l=100 w=185)
+.model aaa3 nmos(kp=1.073u vto=1.73 phi=0.6 gamma=0.5 lambda=0 l=100 w=8)
+
+
+.op
+.probe
+.end

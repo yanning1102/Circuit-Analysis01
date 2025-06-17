@@ -1,0 +1,11 @@
+
+vcc 1 0 dc 15v
+vee 4 0 dc -15v
+rc 1 2 5k
+re 3 4 7.11k
+q1 2 0 3 aaa
+.model aaa npn(level=1 is=1.8e-15a   bf=100  vaf=10000)
+.op
+.probe 
+.end
+*ie=ib+ic

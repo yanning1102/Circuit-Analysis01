@@ -1,0 +1,21 @@
+
+vdd 1 0 dc 4v
+vss 5 0 dc -4v
+vo 99 0 dc 0v
+vo2 77 0 dc 0v
+rb 7 5 207
+m9 3 2 1 1 bbb l=1u w=1u
+m8 2 2 1 1 bbb l=1u w=1u
+m11 3 3 4 4 aaa l=1u w=1u
+m10 2 3 6 6 aaa l=1u w=1u
+m13 4 4 5 5 aaa l=1u w=1u
+m12 6 4 7 7 aaa l=1u w=2u
+m2 99 2 1 1 bbb l=1u w=1u
+m3 8 2 1 1 bbb l=1u w=1u
+m4 8 8 5 5 aaa l=1u w=1u
+m5 77 8 5 5 aaa l=1u w=1u
+.model aaa nmos(kp=4m vto=2v lambda=0.02)
+.model bbb pmos(kp=4m vto=-2v lambda=0.02)
+.op
+.probe
+.end

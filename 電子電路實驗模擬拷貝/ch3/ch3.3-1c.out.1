@@ -1,0 +1,35 @@
+
+**** 03/17/21 23:08:20 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+v1 2 0 dc 5
+v2 3 0 dc -5
+v3 4 0 dc 5
+v4 5 0 dc -5
+
+vi 1 0 dc 0
+
+M1 1 2 0 3 e_mos L=5u W=50u
+M1 1 5 0 4 s_mos L=5u W=50u
+
+ERROR(ORPSIM-15089): Can not re-define M1. M1 is either a system defined variable or has already been defined
+---$
+ERROR(ORPSIM-16371): Extra text on line
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.model s_mos pmos (KP=20u Vto=2V lambda=0.02)
+.dc vi -5 5 0.01
+.op
+
+.probe
+.end
+

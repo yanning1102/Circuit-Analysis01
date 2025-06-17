@@ -1,0 +1,19 @@
+
+vcc 4 0 dc 10v
+vs 1 0 ac 10mv
+rs 1 2 1k
+r1 7 0 2k
+rc 4 5 1k
+re 6 0 1k
+rl 4 3 50k
+r2 3 0 50k
+c1 2 3 1gf
+c2 5 7 1gf
+c3 6 0 1gf
+q1 5 3 6 npntr
+.model npntr npn(is=1.8e-15 bf=100 vaf=100)
+.op
+.ac lin 1 1khz 1khz
+.print ac vm(1) vp(1) vm(7) vp(7)
+.print ac vm(3) vp(3) im(vs) ip(vs) im(r1)
+.end

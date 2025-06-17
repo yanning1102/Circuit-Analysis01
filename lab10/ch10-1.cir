@@ -1,0 +1,18 @@
+*circuit description
+vdd vdd 0 dc 1.5
+*vi vi 0 sin(0V 10V 60HZ)
+vi vi 0 dc 0.7348529
+*diode model descriotion
+
+M1 1 vi vdd vdd d_mos L=1.8u W=8.1u
+M2 1 vi 0 0 e_mos L=1.8u W=2.7u
+
+.model e_mos nmos (KP=300u Vto=0.5 lambda=0.002 gamma=0.5)
+.model d_mos pmos (KP=75u Vto=-0.5 lambda=0.002 gamma=0.5)
+
+*analysis requests
+*.TRAN 0.01ms 40ms 0ms 0.01ms
+.dc vi 0 2 0.01
+.op
+.probe
+.end

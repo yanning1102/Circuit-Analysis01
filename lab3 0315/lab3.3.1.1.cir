@@ -1,0 +1,9 @@
+
+vi 1 0 dc 2.4v
+vb 3 0 dc -5v
+vg 2 0 dc 5v
+m1 1 2 0 3 aaa l=10u w=50u
+.model aaa nmos(kp=20u vto=1v lambda=0)
+.dc vi -5 5 0.01
+.probe
+.end

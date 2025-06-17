@@ -1,0 +1,28 @@
+
+vdd 1 0 dc 12v
+m3 1 1 2 0 aaa3
+m2 2 2 3 0 aaa2
+m1 3 3 0 0 aaa1
+ma3 4 4 1 1 bbbma3
+ma4 6 4 1 1 bbbma4
+ma1 4 7 5 0 aaaa1
+ma2 6 8 5 0 aaaa2
+m4 5 3 0 0 aaa4
+.model aaa1 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.49 l=1 )
+.model aaa2 nmos(kp=1.073u vto=1.73 lambda=0.002 phi=0.6 gamma=0.5 w=36.75 l=1)
+.model aaa3 nmos(kp=1.073u vto=1.73 lambda=0.002 phi=0.6 gamma=0.5 w=1.62 l=1)
+.model aaa4 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.49 l=1)
+.model aaaa1 nmos(kp=1.073u vto=1.73 lambda=0.002 phi=0.6 gamma=0.5 w=16.9 l=1)
+.model aaaa2 nmos(kp=1.073u vto=1.73 lambda=0.002 phi=0.6 gamma=0.5 w=16.9 l=1)
+.model bbbma3 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0 w=0.16 l=1)
+.model bbbma4 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0 w=0.16 l=1)
+*vo 6 0 dc 6v
+
+vs 7 70 dc 6v
+vss 70 0 sin(0 0.674 1k 0 0 0)
+vl 8 80 dc 6v
+vll 80 0 sin(0 0.674 1k 0 0 0)
+.op
+.tran 0.01m 20m 0 0.01m
+.probe
+.end

@@ -1,0 +1,10 @@
+
+vi 2 1 pwl(0,0v 0.5ms,0.8v 1.5ms,-0.8v 2.5ms,0.8v 3.5ms,-0.8v 4.5ms,0.8v 5.5ms,-0.8v 6ms,0v)
+vgs 1 0 dc 6v
+vdd 3 0 dc 15v
+rd 3 4 6k
+m1 4 2 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+.tran  0.01ms 10ms 0ms 0.01ms
+.probe
+.end

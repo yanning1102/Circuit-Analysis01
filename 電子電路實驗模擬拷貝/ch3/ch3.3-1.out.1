@@ -1,0 +1,91 @@
+
+**** 03/19/21 18:42:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vg 2 0 dc 5
+vb 3 0 dc -5
+*vdd 1 0 dc 10
+
+*r1 1 2 50k
+*r2 2 3 20meg
+*r3 3 0 20meg
+vi 1 0 dc 0
+M1 1 2 0 3 e_mos L=5u W=50u
+
+.model e_mos pmos(KP=20u Vto=2V lambda=0.02)
+.dc vi -5 5 0.01
+.op
+
+.probe
+.end
+
+**** 03/19/21 18:42:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               e_mos           
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA     .02         
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   -1.4293  (    2)    1.4293  (    3)   -1.4293  
+
+
+  These supply currents failed to converge:
+
+    I(vb)                     =    10.00GA  \    10.00GA
+
+**** Interrupt ****

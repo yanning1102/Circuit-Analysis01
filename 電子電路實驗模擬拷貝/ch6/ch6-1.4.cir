@@ -1,0 +1,17 @@
+
+vdd vdd 0 dc 12
+
+vi vi 0 sin(6 0.002 100)
+*vi vi 0 dc 6
+
+M1 1 1 0 0 e_mos L=0.1u W=0.16322548u
+M2 2 2 1 0 e_mos L=0.1u W=1.84516948u
+M3 vdd vdd 2 0 e_mos L=0.1u W=1.84516948u
+M4 3 1 0 0 e_mos L=0.1u W=0.101016892u
+M5 3 vi vdd vdd d_mos L=0.1u W=0.031057841u
+.model e_mos nmos (KP=1.073u Vto=1.73 lambda=0.02)
+.model d_mos pmos (KP=10.43u Vto=-3.533 lambda=0.02)
+.op
+.tran 0.1m 40m 0m 0.01m
+.probe
+.end

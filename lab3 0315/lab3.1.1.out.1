@@ -1,0 +1,75 @@
+
+**** 03/15/22 14:04:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 1 0 dc 2.4v
+vr1 4 0 dc 5v
+vr2 6 0 dc -5v
+r1 1 2 10k
+r2 2 3 10k
+r3 2 5 10k
+d1 3 4 dio
+d2 6 5 dio
+.model dio d(is=0.01pa n=-1.0675)
+.dc vi -10 10 0.01
+.probe
+.end
+
+ERROR(ORPSIM-16551): Floating point computation failed during Device/Model Load. Possible solutions: 1)Ensure that all device parameters are in valid range. 2)Try using .options LIMIT
+
+INTERNAL ERROR -- Invalid Number in model dio, Log
+
+ABORTING SIMULATION
+**** 03/15/22 14:04:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =           7
+  External (NCNODS)                 =           7
+  Total (NUMNOD)                    =           7
+
+Total device count (NUMEL)          =           8
+  Diodes (D)                        =           2
+  Resistors (R)                     =           3
+  Voltage Sources (V)               =           3
+
+Number of subcircuits (X)           =           0
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Load Threads                        =           1
+
+Runtime statistics:                       Seconds      Iterations
+  Readin                            =        0.00
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =        0.00
+  Total job time                    =         .44
+

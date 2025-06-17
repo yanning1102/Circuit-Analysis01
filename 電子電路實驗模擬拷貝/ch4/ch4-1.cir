@@ -1,0 +1,16 @@
+* circuit description *
+Vcc 1 0 DC 15V
+Vo 3 0 DC 3V
+R1 1 2 14.3k
+*BJT model description
+Q1 2 2 0 0 npn_transistor
+Q2 3 2 0 0 npn_transistor
+
+.model npn_transistor npn (Is=1.8E-15 BF=100 VAF=100)
+*analysis requests
+.DC Vo 0 15 0.01
+.op
+*output requests
+.plot DC I(Vo)
+.probe
+.end

@@ -1,0 +1,15 @@
+
+vcc 1 0 dc 15v
+iref 1 2 dc 1m
+q1 2 3 0 aaa
+.model aaa npn(is=1.8e-15 vaf=100 bf=100)
+vo 4 0 dc 5v
+q3 4 2 3 bbb
+.model bbb npn(is=1.8e-15 vaf=100 bf=100)
+q2 3 3 0 ccc
+.model ccc npn(is=1.8e-15 vaf=100 bf=100)
+.op
+.dc vo 0 15 0.01
+.plot dc i(vo)
+.probe
+.end

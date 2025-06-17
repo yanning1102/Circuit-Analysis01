@@ -1,0 +1,14 @@
+
+vi 1 0 sin(0v 5v 100hz)
+vbn 3 0 dc -5v
+vgn 2 0 dc 5v
+m1 1 2 9 3 aaa l=10u w=50u
+.model aaa nmos(kp=20u vto=1v lambda=0)
+rl 9 0 10k
+vbp 4 0 dc 5v
+vgp 5 0 dc -5v
+m2 1 5 9 4 ccc l=10u w=50u
+.model ccc pmos(kp=20u vto=-1v lambda=0)
+.tran 0.01ms 40ms 0ms 0.01ms
+.probe
+.end

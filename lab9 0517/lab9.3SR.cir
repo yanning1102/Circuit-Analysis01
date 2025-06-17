@@ -1,0 +1,58 @@
+
+vdd 1 0 dc 12v
+m3 1 1 2 0 aaa3
+m2 2 2 3 0 aaa2
+m1 3 3 0 0 aaa1
+ma3 4 4 1 1 bbbma3
+ma4 6 4 1 1 bbbma4
+ma1 4 7 5 0 aaaa1
+ma2 6 8 5 0 aaaa2
+m4 5 3 0 0 aaa4
+ma5 9 6 1 1 bbbma5
+m5 9 3 0 0 aaa5
+cc 6 9 4p
+.model aaa1 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.49U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model aaa2 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.49U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model aaa3 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=1.01U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model aaa4 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.49U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model aaaa1 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=6.5U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model aaaa2 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=6.5U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model bbbma3 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0 w=0.16U l=1U tox=100n cgso=2.288n cgdo=138.5p cbd=899.2p)
+.model bbbma4 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0 w=0.16U l=1U tox=100n cgso=2.288n cgdo=138.5p cbd=899.2p)
+.model aaa5 nmos(kp=1.073u vto=1.73 lambda=0.002 gamma=0 w=11.1U l=1U tox=2u cgso=73.61p cgdo=6.487p cbd=74.46p)
+.model bbbma5 pmos(kp=10.43u vto=-3.533 lambda=0.002 gamma=0 w=0.311U l=1U tox=100n cgso=2.288n cgdo=138.5p cbd=899.2p)
+*vo 6 0 dc 6v
+*vs 7 70 dc 6v
+*vss 70 0 sin(0 0.674 1k 0 0 0)
+*vl 8 80 dc 6v
+*vll 80 0 sin(0 0.674 1k 0 0 0)
+
+* for AC analysis®t¼Ò-------
+*vminus 7 70 ac -5u
+*vminus_dc 70 0 dc 6
+*vplus 8 80 ac 5u
+*vplus_dc 80 0 dc 6
+*.tran 0.01m 20m 0 0.01m
+*.ac dec 500 0.000001 1000meg
+*--------------------------
+
+* for AC analysis¦@¼Ò-------
+*vminus 7 70 ac 500u
+*vminus_dc 70 0 dc 6
+*vplus 8 80 ac 500u
+*vplus_dc 80 0 dc 6
+*.tran 0.01m 20m 0 0.01m
+*.ac dec 500 0.000001 1000meg
+*--------------------------
+
+* for SR-------
+
+vminus_dc 7 0 dc 6
+vplus 8 80 pulse(0 1 0 0 0 5ms 10ms)
+vplus_dc 80 0 dc 6
+.tran 0.01m 20m 0 0.01m
+*.ac dec 500 0.000001 1000meg
+*--------------------------
+.op
+.probe
+.end

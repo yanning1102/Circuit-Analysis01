@@ -1,0 +1,13 @@
+
+vdd vdd 0 dc 12
+r1 vdd 3 40000000
+
+M1 1 1 0 0 e_mos L=32u W=20u
+M2 2 2 1 0 e_mos L=12u W=20u
+M3 vdd vdd 2 0 e_mos L=240u W=20u
+M4 3 1 0 0 e_mos L=240u W=20u
+.model e_mos nmos (KP=1.073u Vto=1.73 gamma=0.5 lambda=0.02)
+
+.op
+.probe
+.end

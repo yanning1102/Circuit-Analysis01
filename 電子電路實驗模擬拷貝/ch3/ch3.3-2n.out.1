@@ -1,0 +1,31 @@
+
+**** 03/23/21 21:15:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+v1 2 0 dc 5
+v2 3 0 dc -5
+r1 4 0 100k
+*vdd 1 0 dc 10
+
+*r1 1 2 50k
+*r2 2 3 20meg
+*r3 3 0 20meg
+vi 1 0 sin(0 5 100 0 0)
+M1 1 2 4 3 e_mos L=5u W=50u
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.tran 0.01m 40m *0 0.01m
+----------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token '*0' to double value. Token can be a constant or expression
+.probe
+.end
+

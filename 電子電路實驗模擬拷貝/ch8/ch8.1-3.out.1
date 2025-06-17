@@ -1,0 +1,50 @@
+
+**** 05/20/21 14:49:28 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ******************************************************************
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+* High *
+*******************************************************************
+vdd vdd 0 dc 20
+vs vs 0 ac 200m
+r1 2 vdd 560k
+r2 2 0 82k
+rs vs 1 50
+rd vdd 3 390
+rl 4 0 390
+c1 1 2 200u
+c2 3 4 0.1u
+M1 3 2 0 0 M2n6845 L=2u W=0.12
+
+
+*.model M2n7000 NMOS(L=2u W=0.12 Kp=1.073u Vto=1.73 Lambda=0.002 Tox=2u Cgso=73.61p Cgdo=6.487p Cbd=74.46p)
+
+.model M2n7000 NMOS(Level=1 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2
++ Vmax=0 Xj=0 Tox=2u Uo=600 Phi=.6 Kp=1.073u W=.12 L=2u Rs=20m Vto=1.73
++ Rd=.5489 Rds=48MEG Cgso=73.61p Cgdo=6.487p Cbd=74.46p Mj=.5 Pb=.8
++ Fc=.5 Rg=546.2 Is=10f N=1 Rb=1m Lambda=0.002) 
+
+*.model M2N6845 PMOS(Level=1 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2
+*+ Vmax=0 Xj=0 Tox=100n Uo=300 Phi=.6 Rs=.284 Kp=10.43u W=.68 L=2u
+*+ Vto=-3.533 Rd=.1672 Rds=444.4MEG Cbd=899.2p Pb=.8 Mj=.5 Fc=.5
+*+ Cgso=2.288n Cgdo=138.5p Rg=7.701 Is=793.1f N=3 Tt=425n)
+
+*********************************************************************
+* MEASURE OBJECT *
+*********************************************************************
+.op
+.ac dec 10 1khz 15Meghz
+.plot ac vdb(4)
+.probe
+.end 
+
+ERROR(ORPSIM-15113): Model M2n6845 used by M1 is undefined
+

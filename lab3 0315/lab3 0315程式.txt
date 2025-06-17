@@ -1,0 +1,146 @@
+lab3.1.1
+*直流分析
+vi 1 0 dc (2.4v) 
+vr1 4 0 dc 5v
+vr2 6 0 dc -5v
+r1 1 2 10k
+r2 2 3 10k
+r3 2 5 10k
+d1 3 4 dio
+d2 6 5 dio
+.model dio d(is=0.01pa n-1.0675)
+.dc vi -10 10 0.01
+.probe
+.end
+
+
+lab3.1.2
+*暫態分析
+vi 1 0 sin(0v 10v 60hz)
+vr1 4 0 dc 5v
+vr2 6 0 dc -5v
+r1 1 2 10k
+r2 2 3 10k
+r3 2 5 10k
+d1 3 4 dio
+d2 6 5 dio
+.model dio d(is=0.01pa n-1.0675)
+.tran 0.01ms 40ms 0ms 0.01ms
+.probe
+.end
+
+
+
+lab 3.2.1 
+*bjt 偏壓點和轉移函數分析
+vcc 1 0 dc 10v
+vbb 5 0 dc 3v
+vi 4 5 dc 1mv *設定為小信號遠小於vt25mv
+rc 1 2 2k
+rbb 4 3 100k
+
+q1 2 3 0 npntra
+.model npntra npn(is=1.8e-15 bf=100)
+.tf v(2) vi
+.op
+.end
+
+lab3.2.2 
+*bjt 共射極偏壓點和小信號  中頻分析
+vcc 4 0 dc 10v
+vs 1 0 ac 10mv
+rs 1 2 1k
+r1 7 0 2k
+rc 4 5 1k
+re 6 0 1k
+r1 4 3 50k
+r2 3 0 50k
+c1 2 3 1gf
+c2 5 7 1gf
+c3 6 0 1gf
+q1 5 3 6 npntr
+.model npntr npn(is=1.8e-15 bf=100 vaf=100)
+.op
+.ac lin 1 1khz 1khz
+.print ac vm(1) vp(1) vm(7) vp(7)
+.print ac vm(3) vp(3) im(vs) ip(vs) im(r1)
+.end
+
+
+lab3.2.2.1
+*bjt 共射極偏壓點和小信號  中頻分析
+vcc 4 0 dc 10v
+vs 1 0 0v
+rs 1 2 1k
+r1 7 0 2k
+rc 4 5 1k
+re 6 0 1k
+rl 4 3 50k
+r2 3 0 50k
+c1 2 3 1gf
+c2 5 7 1gf
+c3 6 0 1gf
+vout 7 0 ac 10mv
+q1 5 3 6 npntr
+.model npntr npn(is=1.8e-15 bf=100 vaf=100)
+.op
+.ac lin 1 1khz 1khz
+.print ac vm(vout) vp(7) im(vout) ip(vout)
+.end
+
+lab3.3.1.1
+*直流掃描nmos
+vi 1 0 dc 2.4v
+vb 3 0 dc -5v
+m1 0 2 1 3  aaa (l= w=)
+.model aaa nmos(kp= vto= lambda=)
+.dc vi -5 5 0.01
+.probe
+.end
+
+
+
+lab3.3.1.2
+vi 1 0 dc 2.4v
+vb 3 0 dc 5v
+m1 0 2 1 3 aaa (l= w=)
+.model aaa pmos(kp= vto= lambd=)
+.dc vi -5 5 0.01
+.probe
+.end
+
+lab3.3.1.3
+vi 1 0 dc 2.4v
+vbn 3 0 dc -5v
+m1 0 2 1 3  aaa (l= w=)
+.model aaa nmos(kp= vto= lambd=)
+
+vbp 4 0 dc 5v
+m2 1 5 0 4 ccc(l= w=)
+.model ccc pmos(kp= vto= lambd=)
+.dc vi -5 5 0.01
+.probe
+.end
+
+
+lab3.3.2 4k 6k 直流負載線4k 6k
+vgs 1 0 dc 6v
+vds 2 0 dc 7.5v
+rd 2 0 4k
+m1 2 1 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+.dc vds 0 15 0.01 vgs 1 7 1
+.probe
+.end
+
+lab 3.3.2.2  4k 6k輸出端
+vi 2 1 pwl(0,0v 0.5ms,0.8v 1.5ms,-0.8v 2.5ms,0.8v 3.5ms,-0.8v 4.5ms,0.8v 5.5ms,-0.8v 6ms,0v)
+vgs 1 0 dc 6v
+vdd 3 0 dc 15v
+rd 3 4 4k
+m1 4 2 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+
+
+ 
+

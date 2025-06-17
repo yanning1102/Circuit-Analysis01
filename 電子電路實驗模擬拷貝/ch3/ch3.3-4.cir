@@ -1,0 +1,29 @@
+
+
+rd 3 4 4k
+*rd 3 4 6k
+vdd 3 0 dc 15
+
+vi 2 1 PWL(0, 0V 0.5mS, 0.8V 1.5mS, -0.8V 2.5mS, 0.8V 3.5mS,
++ -0.8V 4.5mS, 0.8V 5.5mS, -0.8V 6mS, 0V) 
+vgs 1 0 dc 6
+M1 4 2 0 0 e_mos L=5u W=50u
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.dc vdd 0 15 0.01 vgs 1 6 1
+.probe
+.end
+
+*rd 3 4 4k
+rd 3 4 6k
+vdd 3 0 dc 15
+
+vi 2 1 PWL(0, 0V 0.5mS, 0.8V 1.5mS, -0.8V 2.5mS, 0.8V 3.5mS,
++ -0.8V 4.5mS, 0.8V 5.5mS, -0.8V 6mS, 0V) 
+vgs 1 0 dc 6
+M1 4 2 0 0 e_mos L=5u W=50u
+
+.model e_mos nmos (KP=20u Vto=2V lambda=0.02)
+.dc vdd 0 15 0.01 vgs 1 6 1
+.probe
+.end

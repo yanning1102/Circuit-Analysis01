@@ -1,0 +1,23 @@
+Common-Emitter Amplifier
+* circuit description *
+Vcc 4 0 DC 10V
+Vs 1 0 AC 10mV
+Rs 1 2 1k
+Rl 7 0 2k
+Rc 4 5 1k
+Re 6 0 1k
+R1 4 3 50k
+R2 3 0 50k
+C1 2 3 1GF
+C2 5 7 1GF
+C3 6 0 1GF
+* model description *
+Q1 5 3 6 npn_transistor
+.model npn_transistor npn (Is=1.8e-15 Bf=100 Vaf=100)
+*.model npn_transistor npn (Is=1.8e-15 Bf=100 )
+* analysis requests *
+.OP
+.AC LIN 1 1kHz 1kHz
+.PRINT AC Vm(1) Vp(1) Vm(7) Vp(7)
+.PRINT AC Vm(3) Vp(3) Im(Vs) Ip(Vs) Im(Rl)
+.end 

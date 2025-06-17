@@ -1,0 +1,15 @@
+
+r1 1 2 4585.78644
+*i1 1 2 dc 1m
+vdd 1 0 dc 8
+vo 4 0 dc 4
+M1 3 3 0 0 e_mos L=1u W=1u
+M2 5 3 0 0 e_mos L=1u W=1u
+M3 2 2 3 0 e_mos L=1u W=1u
+M4 4 2 5 0 e_mos L=1u W=1u
+.model e_mos nmos (KP=4m Vto=2V lambda=0.02)
+
+.dc vo 0 15 0.01
+.op
+.probe
+.end

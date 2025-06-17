@@ -1,0 +1,12 @@
+
+vcc 1 0 dc 15v
+vo 3 0 dc 3v
+r1 1 2 14.3k
+q1 2 2 0 0 aaa
+q2 3 2 0 0 aaa
+.model aaa npn(is=1.8e-15 bf=100 vaf=100)
+.op
+.dc vo 0v 15v 10mv
+.plot dc i(vo)
+.probe
+.end 

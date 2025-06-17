@@ -1,0 +1,11 @@
+Forward Characteristics of a 1mA Diode
+*circuit description*
+VD 1 0 DC 700mV
+*diode model statement*
+D1 1 0 1mA_diode
+.model 1mA_diode D (Is=0.01pA n=1.0675)
+*analysis requests*
+.DC VD 0V 800mV 200uV
+.PLOT DC I(VD)
+.probe
+.end

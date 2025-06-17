@@ -1,0 +1,22 @@
+
+vdd 1 0 dc 12v
+m3 1 1 2 0 aaa3
+m2 2 2 3 0 aaa2
+m1 3 3 0 0 aaa1
+m4 5 3 0 0 aaa4
+m5 5 4 1 1 bbb5
+vi 4 7 dc 6v
+vs 7 0 sin(0v 0.0048v 1khz 0 0 0)
+
+.model aaa1 nmos(kp=1.073u vto=1.73 lambda=0.02 gamma=0 l=10 w=101)
+.model aaa2 nmos(kp=1.073u vto=1.73 lambda=0.02 gamma=0.5 phi=0.6 l=10 w=11500)
+.model aaa3 nmos(kp=1.073u vto=1.73 lambda=0.02 gamma=0.5 phi=0.6 l=10 w=185200)
+.model aaa4 nmos(kp=1.073u vto=1.73 lambda=0.02 gamma=0 l=10 w=101)
+
+.model bbb5 pmos(kp=10.43u vto=-3.533 lambda=0.02 gamma=0 l=10 w=30.88)
+
+.op
+.tran 0.01m 20m 0 0.01m
+
+.probe
+.end

@@ -1,0 +1,151 @@
+
+**** 03/15/22 16:23:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 1 0 dc 15v
+r1 1 2 42k
+vcc 5 0 dc 15v
+vee 4 0 dc -15v
+r2 3 0 1k
+q1 5 2 3 aaa
+.model aaa npn(level=1 bf=100 is=1.8104e-15a )
+q2 4 2 3 bbb
+.model bbb pnp(level=1 bf=100 is=1.8104e-15a )
+.op
+.probe
+.end
+
+**** 03/15/22 16:23:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               aaa             bbb             
+               NPN             PNP             
+       LEVEL    1               1            
+          IS    1.810400E-15    1.810400E-15 
+          BF  100             100            
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 03/15/22 16:23:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   15.0000  (    2)   10.8170  (    3)   10.0590  (    4)  -15.0000      
+
+(    5)   15.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vi          -9.959E-05
+    vcc         -9.959E-03
+    vee          5.088E-11
+
+    TOTAL POWER DISSIPATION   1.51E-01  WATTS
+
+
+**** 03/15/22 16:23:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         q1          q2        
+MODEL        aaa         bbb       
+IB           9.96E-05    2.58E-11 
+IC           9.96E-03   -5.09E-11 
+VBE          7.59E-01    7.59E-01 
+VBC         -4.18E+00    2.58E+01 
+VCE          4.94E+00   -2.51E+01 
+BETADC       1.00E+02   -1.97E+00 
+GM           3.85E-01    0.00E+00 
+RPI          2.60E+02    1.00E+14 
+RX           0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00 
+BETAAC       1.00E+02    0.00E+00 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       6.13E+18    0.00E+00 
+
+
+
+          JOB CONCLUDED
+
+**** 03/15/22 16:23:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        0.00
+

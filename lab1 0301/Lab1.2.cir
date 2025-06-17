@@ -1,0 +1,12 @@
+Temperature Effect of I-V characteristics
+*Circuit Description
+VD 1 0 DC 700mV
+D1 1 0 1mA_diode 
+*diode model statement
+.model 1mA_diode D (Is=0.01pA n=1.0675)
+*analysisrequests *
+.DC VD 0V 800mV 200uV
+.TEMP 0 27 100
+.PLOT DC I(VD)
+.probe
+.end

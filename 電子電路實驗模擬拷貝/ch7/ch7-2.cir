@@ -1,0 +1,28 @@
+
+vdd vdd 0 dc 12
+*v1 v1 0 dc 6 
+*v2 v2 0 dc 6 
+v1 v1 0 sin(6 0.002 100)
+v2 v2 0 sin(6 -0.002 100)
+
+M1 1 1 0 0 e_mos L=0.5u W=5.70968729u
+M2 2 2 1 0 e_mos L=0.5u W=18.33998762u
+M3 vdd vdd 2 0 e_mos L=0.5u W=0.80006553u
+
+M4 3 1 0 0 e_mos L=0.5u W=5.70968729u
+M5 4 v1 3 0 e_mos L=0.5u W=9.16999381u
+M6 4 4 vdd vdd d_mos L=0.5u W=0.07692144u
+
+M7 5 v2 3 0 e_mos L=0.5u W=9.16999381u
+M8 5 4 vdd vdd d_mos L=0.5u W=0.07692144u
+
+.model e_mos nmos (KP=1.073u Vto=1.73  lambda=0.004 gamma=0.5)
+.model d_mos pmos (KP=10.43u Vto=-3.533  lambda=0.004 gamma=0.5)
+
+
+
+.tran 0.1m 40m 0m 0.01m
+.op
+.probe
+.end
+

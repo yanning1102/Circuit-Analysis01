@@ -1,0 +1,111 @@
+
+**** 04/26/22 19:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vs 1 0 dc 2.4v
+r1 1 2 0.2k
+r2 2 0 0.2k
+r3 0 3 0.1k
+d1 2 3 dio
+.model dio d(level=1 is=0.01pa n=1.0675)
+.op
+.dc vs 0 5 0.01
+.probe
+.end
+
+**** 04/26/22 19:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               dio             
+          IS   10.000000E-15 
+           N    1.0675       
+
+
+**** 04/26/22 19:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    2.4000  (    2)     .9617  (    3)     .2384  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vs          -7.192E-03
+
+    TOTAL POWER DISSIPATION   1.73E-02  WATTS
+
+
+**** 04/26/22 19:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         d1        
+MODEL        dio       
+ID           2.38E-03 
+VD           7.23E-01 
+REQ          1.16E+01 
+CAP          0.00E+00 
+
+          JOB CONCLUDED
+
+**** 04/26/22 19:56:01 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

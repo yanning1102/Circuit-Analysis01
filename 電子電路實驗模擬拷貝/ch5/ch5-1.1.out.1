@@ -1,0 +1,159 @@
+
+**** 04/15/21 13:27:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+r1 1 2 7292.89322
+*r1 1 2 8707.10679
+*i1 1 2 dc 1m
+vdd 1 0 dc 10
+vo 3 0 dc 3
+M1 2 2 0 0 e_mos L=1u W=1u
+M2 3 2 0 0 e_mos L=1u W=1u
+.model e_mos nmos (KP=4m Vto=2V lambda=0)
+
+.dc vo 0 15 0.01
+.op
+.probe
+.end
+
+**** 04/15/21 13:27:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               e_mos           
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2            
+          KP    4.000000E-03 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 04/15/21 13:27:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   10.0000  (    2)    2.7071  (    3)    3.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vdd         -1.000E-03
+    vo          -1.000E-03
+
+    TOTAL POWER DISSIPATION   1.30E-02  WATTS
+
+
+**** 04/15/21 13:27:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M1          M2        
+MODEL        e_mos       e_mos     
+ID           1.00E-03    1.00E-03 
+VGS          2.71E+00    2.71E+00 
+VDS          2.71E+00    3.00E+00 
+VBS          0.00E+00    0.00E+00 
+VTH          2.00E+00    2.00E+00 
+VDSAT        7.07E-01    7.07E-01 
+Lin0/Sat1   -1.00E+00   -1.00E+00 
+if          -1.00E+00   -1.00E+00 
+ir          -1.00E+00   -1.00E+00 
+TAU         -1.00E+00   -1.00E+00 
+GM           2.83E-03    2.83E-03 
+GDS          0.00E+00    0.00E+00 
+GMB          0.00E+00    0.00E+00 
+CBD          0.00E+00    0.00E+00 
+CBS          0.00E+00    0.00E+00 
+CGSOV        0.00E+00    0.00E+00 
+CGDOV        0.00E+00    0.00E+00 
+CGBOV        0.00E+00    0.00E+00 
+CGS          0.00E+00    0.00E+00 
+CGD          0.00E+00    0.00E+00 
+CGB          0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+**** 04/15/21 13:27:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .09
+

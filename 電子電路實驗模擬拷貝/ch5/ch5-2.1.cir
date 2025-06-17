@@ -1,0 +1,18 @@
+vdd vdd 0 dc 4
+vss vss 0 dc -4
+vo vo 0 dc 0
+r1 1 0 2280
+*i1 1 2 dc 1m
+
+M1 1 1 vss vss e_mos L=1u W=1u
+M2 vo 1 vss vss e_mos L=1u W=1u
+M3 2 1 vss vss e_mos L=1u W=1u
+M4 vdd 2 2 vdd p_mos L=1u W=1u
+M5 vdd 2 vo vdd p_mos L=1u W=1u
+.model e_mos nmos (KP=4m Vto=2V lambda=0.02)
+.model p_mos pmos (KP=4m Vto=-2V lambda=0.02)
+*.dc v3 0 15 0.01
+*.dc v8 0 15 0.01
+.op
+.probe
+.end

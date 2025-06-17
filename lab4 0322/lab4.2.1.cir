@@ -1,0 +1,14 @@
+
+vdd 1 0 dc 15v
+r1 1 2 5k
+iref 1 2 dc 1m
+m1 2 2 0 0 aaa l=10u w=100u 
+.model aaa nmos(kp=20u vto=1 lambda=0.02)
+vo 3 0 dc 8v
+m2 3 2 0 0 bbb l=10u w=100u 
+.model bbb nmos(kp=20u vto=1 lambda=0.02)
+.op
+.dc vo 0 15 0.01
+.plot dc i(vo)
+.probe
+.end

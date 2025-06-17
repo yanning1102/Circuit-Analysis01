@@ -1,0 +1,12 @@
+
+vdd 1 0 dc 8v
+vo 4 0 dc 3v
+r1 1 2 4586
+m3 2 2 3 3 aaa l=1u w=1u
+m4 4 2 5 5 aaa l=1u w=1u
+m1 3 3 0 0 aaa l=1u w=1u
+m2 5 3 0 0 aaa l=1u w=1u
+.model aaa nmos(kp=4ma vto=2 lambda=0.02)
+.op
+.probe
+.end

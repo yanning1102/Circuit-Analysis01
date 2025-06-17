@@ -1,0 +1,57 @@
+
+**** 03/01/22 17:10:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+VD 1 0 DC 700mV
+D1 1 0 1mA_diode
+.model 1mA_diode D (Is=0.01pA n=1.0675 Bv=6V ibv=1na)
+.DC VD -8.5V 1V 0.1mV
+.PLOT DC I(VD)
+.probe
+.end
+
+**** 03/01/22 17:10:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               1mA_diode       
+          IS   10.000000E-15 
+           N    1.0675       
+          BV    6            
+         IBV    1.000000E-09 
+
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   -7.1315  
+
+
+  These supply currents failed to converge:
+
+    I(VD)                     =    10.00GA  \    10.00GA
+
+**** Interrupt ****

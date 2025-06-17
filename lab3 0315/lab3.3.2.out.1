@@ -1,0 +1,40 @@
+
+**** 03/22/22 14:46:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vgs 1 0 dc 6v
+vds 2 0 dc 7.5v
+rd 2 0 4k
+m1 2 1 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+.dc vds 0 15 0.01 vds 1 7 1
+.probe
+.end
+
+ERROR(ORPSIM-15051): A device may appear in .DC and .STEP commands only once
+
+**** 03/22/22 14:46:51 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+
+
+

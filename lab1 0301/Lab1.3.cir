@@ -1,0 +1,8 @@
+
+VD 1 0 DC 700mV
+D1 1 0 1mA_diode
+.model 1mA_diode D(Is=0.01pA n=1.0675 Bv=6V ibv=1n)
+.DC VD -6.5V 1V 0.1mV
+.PLOT DC I(VD)
+.probe
+.end

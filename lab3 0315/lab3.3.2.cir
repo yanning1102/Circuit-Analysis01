@@ -1,0 +1,13 @@
+
+vgs 1 0 dc 6v
+vds 2 0 dc 7.5v
+rd 2 0 6k
+m1 2 1 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+.dc vds 0 15 0.01 vgs 1 7 1
+.probe
+.end
+
+
+
+

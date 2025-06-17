@@ -1,0 +1,89 @@
+
+**** 04/26/22 19:56:52 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 1 0 dc 0
+vbn 3 0 dc -5v
+vgn 2 0 dc 5v
+m1 1 2 0 3 aaa l=10u w=50u
+.model aaa nmos(kp=20u vto=1v lambda=0)
+
+vbp 4 0 dc 5v
+vgp 5 0 dc -5v
+m2 1 5 0 4 ccc l=10u w=50u
+.model ccc pmos(kp=20u vto=-1v lambda=0)
+.dc vi -5 5 10.001m
+.probe
+.end
+
+**** 04/26/22 19:56:52 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               aaa             ccc             
+               NMOS            PMOS            
+       LEVEL    1               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1              -1            
+          KP   20.000000E-06   20.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX    0               0            
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+
+          JOB CONCLUDED
+
+**** 04/26/22 19:56:52 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

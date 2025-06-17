@@ -1,0 +1,17 @@
+
+.subckt zener_diode 1 2
+df 1 2 1madio
+dr 2 4 idedio
+vb 4 3 dc 7.3v
+rz 1 3 10
+.model 1madio d(is=0.01pa n=1.0675)
+.model idedio d(is=0.1pa n=0.001)
+.ends zener_diode
+
+vi 1 0 dc 1v 
+r1 1 2 100
+xz1 2 3 zener_diode
+xz2 0 3 zener_diode
+.dc vi -15v 15v 10mv
+.probe
+.end

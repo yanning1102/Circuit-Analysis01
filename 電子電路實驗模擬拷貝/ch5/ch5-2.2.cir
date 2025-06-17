@@ -1,0 +1,33 @@
+
+*v1 1 0 dc 6
+*v2 5 0 dc 6 
+*v3 4 0 dc -6
+*v4 9 0 dc -6
+vdd vdd 0 dc 6
+vss vss 0 dc -6
+vo vo 0 dc 0
+
+rb 5 vss 207.10678118
+M8  1 1 vdd vdd d_mos L=1u W=1u
+M9  2 1 vdd vdd d_mos L=1u W=1u
+M10 1 2 4 4 e_mos W=1u L=1u
+M11 2 2 3 3 e_mos W=1u L=1u
+M12 4 3 5 5 e_mos W=2u L=1u
+M13 3 3 vss vss e_mos W=1u L=1u
+
+M2 vdd 1 vo vdd d_mos L=1u W=1u
+M3 vdd 1 6 vdd d_mos L=1u W=1u
+M4 6 6 vss vss e_mos W=1u L=1u
+M5 vo 6 vss vss e_mos W=1u L=1u
+
+
+ 
+
+.model e_mos nmos ( kp = 0.004 Vto = 2V lambda=0)
+.model d_mos pmos ( kp = 0.004 Vto = -2V lambda=0)
+*.dc vdd 0 15 0.01 vgs 1 6 1
+.op
+*.probe
+.end
+
+

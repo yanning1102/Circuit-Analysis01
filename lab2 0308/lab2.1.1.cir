@@ -1,0 +1,10 @@
+
+vs 1 0 dc 2.4v
+r1 1 2 0.2k
+r2 2 0 0.2k
+r3 0 3 0.1k
+d1 2 3 dio
+.model dio d(level=1 is=0.01pa n=1.0675)
+.op
+.probe
+.end

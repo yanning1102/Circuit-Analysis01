@@ -1,0 +1,111 @@
+lab2.1.1 偏壓點
+vs 1 0 dc 2.4v
+r1 1 2 0.2k
+r2 2 0 0.2k
+r3 0 3 0.1k
+d1 2 3 dio
+.model dio d(level=1 is=0.01pa n=1.0675)
+.op
+.probe
+.end
+
+*直流掃描
+vs 1 0 dc 2.4v
+r1 1 2 0.2k
+r2 2 0 0.2k
+r3 0 3 0.1k
+d1 2 3 dio
+.model dio d(level=1 is=0.01pa n=1.0675)
+.op
+.dc vs 0 5 0.01
+.probe
+.end
+
+*實驗
+vs 1 0 dc 2.4v
+r1 1 2 0.2k
+r2 2 0 0.2k
+r3 0 3 0.1k
+d1 2 3 dio
+.model dio d(level=1 is=0.01pa n=1.0675)
+.op
+.dc vs 0 5 0.01
+.probe
+.end
+
+lab 2.1.2
+*子電路
+.subckt zener_diode 1 2
+df 1 2 1madio
+dr 2 4 idedio
+vb 4 3 dc 7.3v
+rz 1 3 10
+.model 1madio d(is=0.01pa n=1.0675)
+.model idedio d(is=0.01pa n=1.0675)
+.ends zener_diode
+
+vi 1 0 dc 1v 
+r1 1 2 100
+xz1 2 3 zener_diode
+xz2 3 0 zener_diode
+.dc vi -15v 15v 10mv
+.probe
+.end
+
+lab 2.2.1 bjt偏壓點
+vcc 1 2 dc 15v
+vee 3 4 dc -15v
+rc 1 2 5k
+re 3 4 7.11k
+q1 2 0 3 aaa
+.model aaa npn(level=1 is=1.8e-15a   bf=100  vaf=10000)
+.op
+.probe 
+.end
+
+lab2.2.2 偏壓電路偏壓點
+
+vcc 1 0 dc 15v
+rb1 1 2 100k
+rb2 2 0 50k
+rc 1 3 4k
+re 4 0 3k
+q1 3 2 4 aaa
+.model aaa npn(level=1 bf=100 is=1.8e-15a vaf=無限大)
+.op
+.probe
+.end
+
+lab2.2.3 互補式bjt偏壓分析
+vi 1 0 dc 15v
+r1 1 2 42k
+vcc 5 0 dc 15v
+vee 4 0 dc -15v
+q1 5 2 3 aaa
+.model aaa npn(level=1 bf=100 is=1.8104e-15a vaf=無限)
+q2 3 2 4 bbb
+.model bbb pnp(level=1 bf=100 is=1.8104e-15a vaf=無限)
+.op
+.probe
+.end
+
+lab2.3.1 mos電路
+vdd 1 0 dc 10v
+rd 1 2 50k
+r1 2 3 20meg
+r2 3 0 20meg
+m1 2 3 0 0 aaa l=10u w=50u 
+.model aaa nmos(kp=20u vto=1v lambd=0)
+.op
+.probe
+.end
+
+
+ 
+
+
+
+
+
+
+

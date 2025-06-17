@@ -1,0 +1,146 @@
+
+**** 03/15/22 00:12:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vcc 1 0 dc 15v
+vee 4 0 dc -15v
+rc 1 2 5k
+re 3 4 7.11k
+q1 2 0 3 aaa
+.model aaa npn(level=1 is=1.8e-15a   bf=100  vaf=10000)
+.op
+.probe 
+.end
+
+**** 03/15/22 00:12:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               aaa             
+               NPN             
+       LEVEL    1            
+          IS    1.800000E-15 
+          BF  100            
+          NF    1            
+         VAF   10.000000E+03 
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 03/15/22 00:12:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)   15.0000  (    2)    5.0553  (    3)    -.7172  (    4)  -15.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vcc         -1.989E-03
+    vee          2.009E-03
+
+    TOTAL POWER DISSIPATION   6.00E-02  WATTS
+
+
+**** 03/15/22 00:12:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         q1        
+MODEL        aaa       
+IB           1.99E-05 
+IC           1.99E-03 
+VBE          7.17E-01 
+VBC         -5.06E+00 
+VCE          5.77E+00 
+BETADC       1.00E+02 
+GM           7.69E-02 
+RPI          1.30E+03 
+RX           0.00E+00 
+RO           5.03E+06 
+CBE          0.00E+00 
+CBC          0.00E+00 
+CJS          0.00E+00 
+BETAAC       1.00E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       1.22E+18 
+
+
+
+          JOB CONCLUDED
+
+**** 03/15/22 00:12:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        0.00
+

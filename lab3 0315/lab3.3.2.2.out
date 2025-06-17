@@ -1,0 +1,115 @@
+
+**** 04/26/22 19:57:11 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vi 2 1 pwl(0,0v 0.5ms,0.8v 1.5ms,-0.8v 2.5ms,0.8v 3.5ms,-0.8v 4.5ms,0.8v 5.5ms,-0.8v 6ms,0v)
+vgs 1 0 dc 6v
+vdd 3 0 dc 15v
+rd 3 4 6k
+m1 4 2 0 0 aaa l=5u w=50u
+.model aaa nmos(kp=20ua vto=2v lambda=0.02)
+.tran  0.01ms 10ms 0ms 0.01ms
+.probe
+.end
+
+**** 04/26/22 19:57:11 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               aaa             
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA     .02         
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 04/26/22 19:57:11 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    6.0000  (    2)    6.0000  (    3)   15.0000  (    4)    4.5302  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vi           0.000E+00
+    vgs          0.000E+00
+    vdd         -1.745E-03
+
+    TOTAL POWER DISSIPATION   2.62E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 04/26/22 19:57:11 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+  
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+
